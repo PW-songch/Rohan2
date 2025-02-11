@@ -315,16 +315,4 @@ public class CameraExtension : CinemachineExtension
             _dicCinemachineCameraFunction.Clear();
         }
     }
-
-#if UNITY_EDITOR
-    protected virtual void OnDrawGizmosSelected()
-    {
-        if (_dicCinemachineCameraFunction != null)
-        {
-            var e = _dicCinemachineCameraFunction.Values.GetEnumerator();
-            while (e.MoveNext())
-                e.Current.OnDrawGizmosSelected();
-        }
-    }
-#endif
 }

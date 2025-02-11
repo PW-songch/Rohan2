@@ -171,18 +171,6 @@ public class StatusEffect
         }
     }
 
-    //public static bool IsSimpleStatusEffectType(SKILL_EFFECT_TYPE InType)
-    //{
-    //    switch (InType)
-    //    {
-    //        case SKILL_EFFECT_TYPE.SET_ABNORMAL_DEBUFF_STUN:
-    //        case SKILL_EFFECT_TYPE.SET_ABNORMAL_DEBUFF_SLEEP:
-    //            return true;
-    //    }
-
-    //    return false;
-    //}
-
     public static bool IsStatusEffectType(SKILL_EFFECT_TYPE InType)
     {
         switch (InType)
@@ -193,7 +181,6 @@ public class StatusEffect
             case SKILL_EFFECT_TYPE.SET_ABNORMAL_DEBUFF_STUN:
             case SKILL_EFFECT_TYPE.SET_ABNORMAL_DEBUFF_SLEEP:
             case SKILL_EFFECT_TYPE.SET_ABNORMAL_DEBUFF_FREEZE_RATE:
-            //case SKILL_EFFECT_TYPE.SET_ABNORMAL_DEBUFF_SILENCE:
                 return true;
         }
 

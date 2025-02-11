@@ -67,14 +67,6 @@ public class RotationCameraFunction : CinemachineCameraFunction
         MoveRotationSpeed = InSetting.DIRECTION_TO_MOVING_SPEED;
         AttackRotationSpeed = InSetting.DIRECTION_TO_TARGETING_SPEED;
 
-        //ForwardRotationOffset.x = InSetting.X;
-        //ForwardRotationOffset.y = InSetting.Y;
-        //ForwardRotationOffset.z = InSetting.Z;
-
-        //BattleForwardRotationOffset.x = InSetting.X;
-        //BattleForwardRotationOffset.y = InSetting.Y;
-        //BattleForwardRotationOffset.z = InSetting.Z;
-
         InternalSetup(InReset);
     }
 
@@ -145,11 +137,6 @@ public class RotationCameraFunction : CinemachineCameraFunction
 
         InValue *= PitchSpeed * InDeltaTime * -1f;
 
-// temp : Window Build Sensitivity issues : 20230915 - sucheol.park
-// #if !UNITY_EDITOR
-//         InValue *= RepositoryContext.CONST.ROTATE_SENSIBILITY;
-// #endif
-
         var updateX = VirtualCamera.transform.localEulerAngles.x + (InValue * InDeltaTime);
 
         if (updateX >= 180f)
@@ -170,10 +157,6 @@ public class RotationCameraFunction : CinemachineCameraFunction
             return;
 
         InValue *= YawSpeed * InDeltaTime;
-// temp : Window Build Sensitivity issues : 20230915 - sucheol.park
-// #if !UNITY_EDITOR
-//         InValue *= RepositoryContext.CONST.ROTATE_SENSIBILITY;
-// #endif
 
         _rotation.y += InValue;
     }
@@ -187,10 +170,6 @@ public class RotationCameraFunction : CinemachineCameraFunction
             return;
 
         InValue *= YawSpeed * InDeltaTime;
-// temp : Window Build Sensitivity issues : 20230915 - sucheol.park
-// #if !UNITY_EDITOR
-//         InValue *= RepositoryContext.CONST.ROTATE_SENSIBILITY;
-// #endif
 
         var angle = VirtualCamera.Follow.localEulerAngles;
         angle.y -= InValue;
